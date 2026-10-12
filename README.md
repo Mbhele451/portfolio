@@ -1,52 +1,31 @@
-# Lerato Mbhele — Portfolio Website
+# Lerato Mbhele: Portfolio Website
 
-A responsive, static portfolio built with plain HTML, CSS, and JavaScript. No build tools or framework required.
+My personal developer portfolio. It is a responsive static site built with plain HTML, CSS and JavaScript, with no framework or build step.
 
-## Run locally
-Open `index.html` in a browser. For a local server, run:
+**Live site:** <!-- add your GitHub Pages URL here once it is published -->
 
-```bash
-python3 -m http.server 8000
-```
+## About me
 
-Then visit `http://localhost:8000`.
+I'm a final-year BSc Computer Science and Information Systems student at the University of KwaZulu-Natal (UKZN), graduating in December 2026. I'm looking for graduate programmes and junior software development or IT support roles.
 
-## Before publishing
-- Replace the generic GitHub profile links on project cards with the correct repository URLs.
-- Add a real LinkedIn profile URL and a professional email address.
-- Update project descriptions to reflect the exact work you personally completed.
-- Check which technologies you have actually used in a working project. Move tools still being learned to a “Currently learning” section.
-- Only link a CV after checking it for accuracy and personal contact details.
-- Do not add access tokens, passwords, or other secrets to this repository.
+- GitHub: [github.com/Mbhele451](https://github.com/Mbhele451)
+- LinkedIn: [linkedin.com/in/lerato-mbhele-144969238](https://www.linkedin.com/in/lerato-mbhele-144969238)
 
-## Deploy with GitHub Pages
-1. Create a repository named `portfolio` on GitHub.
-2. Upload `index.html`, `styles.css`, `script.js`, and `README.md` to the repository root.
-3. Open **Settings → Pages**.
-4. Select **Deploy from a branch**, choose `main` and `/ (root)`, then save.
-5. Wait for GitHub Pages to publish the site.
+## What's on the site
 
-## Portfolio content draft
-**Headline:** Junior Software Developer | Computer Science & Information Systems | Software, Data & IT Support
+- A hero section with a short introduction and portrait
+- Projects, each with the technologies used and my own contribution
+- An about section covering education and my COMP 100 demonstrator role
+- A skills list, with tools I'm still learning kept separate
+- A CV preview and download dialog
+- A contact section
 
-**About:** I am a Computer Science and Information Systems student developing practical skills in software engineering, database design, and data analysis. Through university team projects and independent learning, I have explored web application development, machine learning, and concurrent programming. I enjoy breaking down technical problems, learning unfamiliar tools, and building solutions that are useful and maintainable. I am interested in junior software development, graduate programmes, and entry-level IT support opportunities.
+## Featured projects
 
-**Projects to feature:**
-- THY WILL Service Management — university group project using ASP.NET Web Forms, C#, and database-backed application concepts. Clearly state your own contribution.
-- Student Performance Prediction — independent machine-learning project using Python and Scikit-learn.
-- Concurrent Inventory & Trading System — university group project using C++ concurrency tools.
-- Helpdesk Management System — personal project in progress, planned with Java, React, PostgreSQL, JWT, and Docker Compose. Label as in progress until it is working.
+| Project | Type | Stack | Repository |
+| --- | --- | --- | --- |
+| THY WILL Service Management | University group project | ASP.NET Web Forms, C#, SQL | [GitHub profile](https://github.com/Mbhele451) (repository link to be added upon completion) |
+| Student Performance Prediction | Independent project | Python, Scikit-learn, Pandas, Matplotlib | [student-performance-prediction](https://github.com/Mbhele451/student-performance-prediction) |
+| Concurrent Inventory & Trading System | University group project | C++ concurrency (`std::thread`, `std::mutex`, smart pointers) | [StationaryHub-Inventory-System](https://github.com/Mbhele451/StationaryHub-Inventory-System) |
+| Helpdesk Management System | Personal project, in progress | Java, React, PostgreSQL, JWT, Docker Compose (planned) | Not published yet |
 
-
-## Verified repository links
-
-- Student Performance Prediction: https://github.com/Mbhele451/student-performance-prediction
-- StationaryHub Inventory System: https://github.com/Mbhele451/StationaryHub-Inventory-System
-- GitHub profile (THY WILL repository not yet confirmed): https://github.com/Mbhele451
-
-## Accuracy notes
-
-- Student Performance Prediction is described as a regression project, not a classification project. The repository README has an older section that still mentions Linear Regression; its current overview and model history describe Random Forest regression, so review and reconcile that README before using it as formal project documentation.
-- StationaryHub is a university group project. The contribution statement follows the role documented in its repository README.
-- THY WILL is described as a group project; this portfolio does not claim specific individual contributions until those are confirmed.
-- Helpdesk Management System is explicitly marked as in progress and its technologies are described as planned architecture.

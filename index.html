@@ -3,83 +3,250 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Lerato Mbhele, Computer Science and Information Systems student and aspiring software developer.">
-  <title>Lerato Mbhele | Software Developer Portfolio</title>
+  <title>Lerato Mbhele | Software Developer</title>
+  <meta name="description" content="Portfolio of Lerato Mbhele, a final-year Computer Science and Information Systems student at UKZN looking for graduate programmes and junior software roles.">
+  <meta name="theme-color" content="#0e1a1c">
+  <meta property="og:title" content="Lerato Mbhele | Software Developer">
+  <meta property="og:description" content="Final-year CS and IS student in Durban. Business web apps, concurrent systems in C++, and machine learning in Python.">
+  <meta property="og:image" content="assets/lerato.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230e1a1c'/%3E%3Cpath d='M18 16v32h16M40 48V16l8 16 8-16v32' fill='none' stroke='%23b6d1a8' stroke-width='5' stroke-linecap='round' stroke-linejoin='round' transform='translate(-6 0)'/%3E%3C/svg%3E">
+
+  <!-- Marks the page as JS-capable before first paint, so reveal animations never hide content for no-JS visitors -->
+  <script>document.documentElement.classList.add('js');</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Lerato Mbhele home"><span class="brand-mark">LM</span><span>LERATO MBHELE<span class="brand-sub">SOFTWARE · SYSTEMS · SUPPORT</span></span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#work">Projects</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact" class="nav-cta">Contact <span>↗</span></a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Lerato Mbhele, back to top">
+      <span class="brand-mark" aria-hidden="true">LM</span>
+      <span class="brand-name">Lerato Mbhele</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="#work">Projects</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="btn btn-small" type="button" data-open-cv>View CV</button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> OPEN TO JUNIOR OPPORTUNITIES</div>
-        <h1>Building useful<br>software, <span class="gradient-text">one problem</span><br>at a time.</h1>
-        <p class="hero-intro">I'm Lerato Mbhele, a Computer Science and Information Systems student interested in software development, data-driven applications, and practical IT solutions.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <span>↘</span></a><a class="button button-quiet" href="#contact">Let's connect <span>↗</span></a></div>
-        <div class="hero-meta"><span><b>01</b> Software development</span><span><b>02</b> Data & machine learning</span><span><b>03</b> IT systems & support</span></div>
+        <p class="availability"><span class="pulse" aria-hidden="true"></span>Graduating December 2026. Open to graduate programmes and junior roles.</p>
+        <h1 id="hero-title">Building useful software, one problem at a time.</h1>
+        <p class="hero-intro">I'm Lerato, a final-year Computer Science and Information Systems student at UKZN. I build business web apps, concurrent systems and small machine-learning tools, and I care about software that is easy to run and easy to support.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See my projects</a>
+          <button class="btn btn-ghost" type="button" data-open-cv>View CV</button>
+        </div>
       </div>
-      <aside class="hero-card">
-        <div class="card-topline"><span>DEVELOPER PROFILE</span><span class="tiny-live">● AVAILABLE</span></div>
-        <div class="avatar-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="avatar-initials">LM</div><span class="float-tag tag-code">&lt;/&gt;</span><span class="float-tag tag-data">0101</span><span class="float-tag tag-star">✳</span></div>
-        <h2>Lerato Thando Mbhele</h2><p class="muted">Computer Science & Information Systems</p>
-        <div class="card-divider"></div>
-        <div class="profile-row"><span>Based in</span><strong>Durban, South Africa</strong></div>
-        <div class="profile-row"><span>Focus</span><strong>Software · Data · IT</strong></div>
-        <a class="text-link" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">GitHub profile <span>↗</span></a>
+
+      <figure class="portrait">
+        <div class="portrait-frame">
+          <img src="assets/lerato.png" width="960" height="1280" fetchpriority="high" alt="Lerato Mbhele standing on a hillside with headphones around his neck, green hills behind him">
+        </div>
+        <figcaption class="glass glass-edu">
+          <strong>BSc Computer Science and Information Systems</strong>
+          <span>University of KwaZulu-Natal</span>
+        </figcaption>
+        <p class="glass glass-place"><span class="pulse" aria-hidden="true"></span>Durban, South Africa</p>
+      </figure>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <h2 id="work-title">Projects</h2>
+        <p>Three finished projects from my degree and personal work, and one I'm building now. Group projects say what I did myself.</p>
+      </header>
+
+      <div class="work-grid">
+
+        <article class="project p-thywill">
+          <div class="plate plate-thywill" data-reveal>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Three stacked layers: presentation, business logic and data access">
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="40" y="26" width="240" height="40" rx="8"/>
+                <rect x="40" y="80" width="240" height="40" rx="8" opacity=".75"/>
+                <rect x="40" y="134" width="240" height="40" rx="8" opacity=".5"/>
+              </g>
+              <g fill="currentColor" font-family="Hanken Grotesk, sans-serif" font-size="13">
+                <text x="60" y="51">Presentation</text>
+                <text x="60" y="105">Business logic</text>
+                <text x="60" y="159">Data access</text>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <p class="project-kind">Final-year group project, two semesters</p>
+            <h3>Thywill Electrical Services: job and inventory management</h3>
+            <p>A system for an electrical and construction business to manage customers, jobs, technicians and stock. It started as a Windows Forms desktop app and was extended into an ASP.NET Web Forms version with a layered architecture.</p>
+            <p class="contribution"><strong>What I did:</strong> worked on the desktop app's service and data-access layers, CRUD and validation for customers, jobs, staff and inventory, job workflows (technician assignment, status, stock needs), and cost calculations and PDF invoices.</p>
+            <p class="note">The database ran on a university-controlled SQL Server, so anything that depends on it is limited by that environment.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>C#</li><li>.NET Framework</li><li>Windows Forms</li><li>ASP.NET Web Forms</li><li>SQL Server</li>
+            </ul>
+            <a class="link" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">GitHub profile</a>
+          </div>
+        </article>
+
+        <article class="project p-ml">
+          <div class="plate plate-ml" data-reveal>
+            <svg viewBox="0 0 320 220" role="img" aria-label="Scatter of predicted marks rising with study hours">
+              <g stroke="currentColor" stroke-width="1" opacity=".35">
+                <path d="M30 190H300M30 190V24"/>
+                <path d="M30 140H300M30 90H300M30 40H300" stroke-dasharray="2 6"/>
+              </g>
+              <path d="M40 176C110 150 190 90 292 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <g fill="currentColor">
+                <circle cx="52" cy="170" r="4"/><circle cx="78" cy="160" r="4" opacity=".6"/><circle cx="104" cy="148" r="4"/>
+                <circle cx="132" cy="122" r="4" opacity=".6"/><circle cx="160" cy="116" r="4"/><circle cx="188" cy="86" r="4" opacity=".6"/>
+                <circle cx="216" cy="82" r="4"/><circle cx="246" cy="58" r="4" opacity=".6"/><circle cx="278" cy="50" r="4"/>
+              </g>
+            </svg>
+          </div>
+          <div class="project-body">
+            <p class="project-kind">Personal project</p>
+            <h3>Student performance prediction</h3>
+            <p>A Python project that estimates student marks from study hours, attendance and sleep. Scripts generate 500 synthetic records, train a Random Forest model, make predictions and plot the results.</p>
+            <p class="contribution"><strong>Evaluation:</strong> MAE and R², with plots for predictions, residuals and feature importance.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>Matplotlib</li>
+            </ul>
+            <a class="link" href="https://github.com/Mbhele451/student-performance-prediction" target="_blank" rel="noreferrer">View the repository</a>
+          </div>
+        </article>
+
+        <article class="project p-cpp">
+          <div class="plate plate-cpp" data-reveal>
+            <svg viewBox="0 0 320 200" role="img" aria-label="Nine warehouses feeding one order queue">
+              <g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45">
+                <path d="M64 40L160 100M160 40V100M256 40L160 100M64 100L160 100M256 100L160 100M64 160L160 100M160 160V100M256 160L160 100"/>
+              </g>
+              <g fill="currentColor">
+                <circle cx="64" cy="40" r="6"/><circle cx="160" cy="40" r="6"/><circle cx="256" cy="40" r="6"/>
+                <circle cx="64" cy="100" r="6"/><circle cx="256" cy="100" r="6"/>
+                <circle cx="64" cy="160" r="6"/><circle cx="160" cy="160" r="6"/><circle cx="256" cy="160" r="6"/>
+              </g>
+              <rect x="128" y="80" width="64" height="40" rx="10" fill="#0e1a1c" stroke="currentColor" stroke-width="1.5"/>
+              <text x="160" y="105" text-anchor="middle" fill="currentColor" font-family="Hanken Grotesk, sans-serif" font-size="12">Orders</text>
+            </svg>
+          </div>
+          <div class="project-body">
+            <p class="project-kind">Group project, COMP315</p>
+            <h3>Concurrent inventory and trading system</h3>
+            <p>A C++ console application that processes 20 orders across 9 warehouses at the same time. Mutexes protect shared stock so orders are rejected cleanly when inventory runs out.</p>
+            <p class="contribution"><strong>What I did:</strong> the mutex-based synchronisation around inventory updates, shared ownership with <code>std::shared_ptr</code>, and the CLI menu and handler functions.</p>
+            <ul class="tags" aria-label="Technologies">
+              <li>C++</li><li>std::thread</li><li>std::mutex</li><li>Smart pointers</li>
+            </ul>
+            <a class="link" href="https://github.com/Mbhele451/StationaryHub-Inventory-System" target="_blank" rel="noreferrer">StationaryHub-Inventory-System</a>
+          </div>
+        </article>
+
+        <article class="project p-next">
+          <p class="project-kind">In progress</p>
+          <h3>Helpdesk management system</h3>
+          <p>A personal project to practise building a full-stack product end to end: tickets, user accounts and deployment. I'm building it in small milestones.</p>
+          <ul class="tags" aria-label="Planned technologies">
+            <li>Java</li><li>React</li><li>PostgreSQL</li><li>JWT</li><li>Docker Compose</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="about-copy">
+        <h2 id="about-title">I like understanding how a system works before I change it.</h2>
+        <p>My degree has taken me through data structures, databases, operating systems, web development and systems analysis. I enjoy breaking a messy requirement into small steps and turning it into something people can use.</p>
+        <p>I'm also drawn to the reliability side of software: troubleshooting, clear documentation and designs that are easy to maintain. I'm interested in cloud infrastructure and systems-level engineering, and I'm looking for a team where I can learn that properly.</p>
+      </div>
+
+      <aside class="about-facts" aria-label="Education and experience">
+        <div class="fact">
+          <h3>Demonstrator, COMP 100</h3>
+          <p>Supporting first-year students in Introduction to Programming at UKZN.</p>
+        </div>
+        <div class="fact">
+          <h3>BSc Computer Science and Information Systems</h3>
+          <p>University of KwaZulu-Natal, 2022 to December 2026.</p>
+        </div>
+        <div class="fact">
+          <h3>Looking for</h3>
+          <p>Graduate programmes, junior software development and entry-level IT support roles.</p>
+        </div>
       </aside>
-      <div class="hero-bottom"><span>PORTFOLIO / 2026</span><span>SCROLL TO EXPLORE ↓</span></div>
     </section>
 
-    <section class="section work-section" id="work">
-      <div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 01—04</p><h2>Projects with a purpose.</h2></div><p class="section-note">A mix of university team projects and independent work, focused on solving practical problems.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-featured">
-          <div class="project-visual visual-thy"><div class="visual-window"><div class="window-bar"><i></i><i></i><i></i><span>THY WILL / SERVICE MANAGEMENT</span></div><div class="mock-dashboard"><div class="mock-side"></div><div class="mock-main"><div class="mock-title"></div><div class="mock-stats"><i></i><i></i><i></i></div><div class="mock-table"><i></i><i></i><i></i><i></i></div></div></div></div><span class="visual-label">BUSINESS WEB APPLICATION</span></div>
-          <div class="project-content"><div class="project-top"><span class="project-type">UNIVERSITY GROUP PROJECT</span><span class="project-number">01</span></div><h3>THY WILL Service Management</h3><p>A service-management application concept for an electrical and construction business, supporting customer bookings and the coordination of jobs, staff, and inventory.</p><div class="tag-list"><span>ASP.NET Web Forms</span><span>C#</span><span>SQL</span><span>Bootstrap</span></div><p class="project-honesty">Group project. My individual contribution is intentionally not listed here until the exact tasks and files I completed are confirmed.</p><a class="text-link" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">View GitHub profile <span>↗</span></a></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual visual-ml"><div class="chart-grid"><div class="chart-axis"></div><div class="chart-line"></div><div class="chart-point p1"></div><div class="chart-point p2"></div><div class="chart-point p3"></div><div class="chart-point p4"></div><div class="chart-caption">MODEL EVALUATION / 01</div></div></div>
-          <div class="project-content"><div class="project-top"><span class="project-type">INDEPENDENT PROJECT</span><span class="project-number">02</span></div><h3>Student Performance Prediction</h3><p>A Python regression project that uses synthetic student records to estimate marks from study hours, attendance, and sleep hours. The repository includes scripts to generate data, train a Random Forest model, make predictions, and visualise model results.</p><div class="tag-list"><span>Python</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span></div><p class="project-honesty">Repository details: 500 synthetic records; Random Forest regression; evaluation with MAE and R²; plots for predictions, residuals, and feature importance.</p><a class="text-link" href="https://github.com/Mbhele451/student-performance-prediction" target="_blank" rel="noreferrer">View project repository <span>↗</span></a></div>
-        </article>
-        <article class="project-card">
-          <div class="project-visual visual-cpp"><div class="node node-one">WH-01</div><div class="node node-two">WH-02</div><div class="node node-three">WH-09</div><div class="node-core">ORDER<br>QUEUE</div><div class="connector c-one"></div><div class="connector c-two"></div><div class="connector c-three"></div><span class="visual-label">CONCURRENT SYSTEMS</span></div>
-          <div class="project-content"><div class="project-top"><span class="project-type">UNIVERSITY GROUP PROJECT</span><span class="project-number">03</span></div><h3>Concurrent Inventory & Trading System</h3><p>A COMP315 C++17 console application that processes orders concurrently across nine South African province-based warehouses. It uses thread synchronisation to protect inventory updates and reject orders when stock is insufficient.</p><div class="tag-list"><span>C++</span><span>std::thread</span><span>std::mutex</span><span>Smart pointers</span></div><p class="project-honesty">My documented contribution: CLI menu design and handler functions, plus smart-pointer memory management using std::shared_ptr. Team project completed as part of COMP315.</p><a class="text-link" href="https://github.com/Mbhele451/student-performance-prediction" target="_blank" rel="noreferrer">View project repository <span>↗</span></a></div>
-        </article>
-        <article class="project-card project-next">
-          <div class="next-icon">+</div><p class="eyebrow">IN PROGRESS</p><h3>Helpdesk Management System</h3><p>A personal project planned around a Java backend, React frontend, PostgreSQL database, JWT authentication, and Docker Compose.</p><div class="tag-list"><span>Java</span><span>React</span><span>PostgreSQL</span><span>Docker</span></div><span class="progress-label"><span></span> BUILDING IN MILESTONES</span></article>
+    <!-- SKILLS -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <header class="section-head">
+        <h2 id="skills-title">Toolkit</h2>
+        <p>What I have used in coursework and projects, and what I'm learning next.</p>
+      </header>
+
+      <dl class="skill-list">
+        <div class="skill-row"><dt>Languages</dt><dd><ul><li>Python</li><li>Java</li><li>C#</li><li>C++</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
+        <div class="skill-row"><dt>Web and databases</dt><dd><ul><li>HTML</li><li>CSS</li><li>ASP.NET Web Forms</li><li>SQL Server</li><li>MySQL</li><li>Database design</li></ul></dd></div>
+        <div class="skill-row"><dt>Machine learning</dt><dd><ul><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Model training and evaluation</li></ul></dd></div>
+        <div class="skill-row"><dt>Systems</dt><dd><ul><li>Concurrency and multithreading</li><li>Memory management</li><li>Linux (Ubuntu, Zorin OS)</li><li>Windows</li></ul></dd></div>
+        <div class="skill-row"><dt>Tools</dt><dd><ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul></dd></div>
+        <div class="skill-row skill-row-learning"><dt>Learning now</dt><dd><ul><li>React</li><li>PostgreSQL</li><li>Docker</li><li>Cloud infrastructure</li></ul></dd></div>
+      </dl>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <h2 id="contact-title">Have a role or project in mind?</h2>
+        <p>I'm available from December 2026 and happy to talk sooner about graduate programmes and junior roles. Email is the quickest way to reach me.</p>
+        <a class="contact-email" href="mailto:mazwimbhele45@gmail.com">mazwimbhele45@gmail.com</a>
+        <div class="contact-actions">
+          <button class="btn btn-primary" type="button" data-open-cv>View CV</button>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/lerato-mbhele-144969238" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
       </div>
-      <p class="section-footnote">Repository links are provided where a matching public repository was verified. THY WILL remains linked to the GitHub profile until its exact repository URL is confirmed. The Helpdesk Management System is labelled as in progress.</p>
     </section>
-
-    <section class="section about-section" id="about">
-      <div class="about-mark">LM<span>’26</span></div>
-      <div class="about-copy"><p class="eyebrow">A LITTLE ABOUT ME / 02</p><h2>Curious by nature.<br><span class="gradient-text">Practical by design.</span></h2><p>I'm developing my skills across software engineering, databases, and data analysis. I enjoy understanding how systems work, breaking complex tasks into manageable steps, and turning requirements into applications people can use.</p><p>Alongside building software, I'm interested in the reliability and support side of technology: troubleshooting, clear documentation, and designing systems that are easier to maintain.</p><a class="text-link" href="#contact">Have a role or project in mind? <span>↗</span></a></div>
-    </section>
-
-    <section class="section skills-section" id="skills">
-      <div class="section-heading"><div><p class="eyebrow">TOOLS I WORK WITH / 03</p><h2>My current toolkit.</h2></div><p class="section-note">A developing skill set. The emphasis is on tools I have studied or used in coursework and projects.</p></div>
-      <div class="skills-layout">
-        <div class="skill-group"><span class="skill-index">01 / DEVELOPMENT</span><h3>Building applications</h3><div class="skill-items"><span>C#</span><span>Java</span><span>Python</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>C++</span></div></div>
-        <div class="skill-group"><span class="skill-index">02 / DATA</span><h3>Working with information</h3><div class="skill-items"><span>MySQL</span><span>Database Design</span><span>NumPy</span><span>Matplotlib</span><span>Scikit-learn</span></div></div>
-        <div class="skill-group"><span class="skill-index">03 / WORKFLOW</span><h3>Tools & systems</h3><div class="skill-items"><span>Git</span><span>GitHub</span><span>Visual Studio</span><span>VS Code</span><span>Docker</span><span>Linux</span></div></div>
-      </div>
-      <p class="section-footnote">Keep this list aligned with your actual experience. Move technologies such as Docker, Java, or React into “currently learning” if you have not yet used them in a working project.</p>
-    </section>
-
-    <section class="contact-section" id="contact"><div class="contact-orb"></div><div class="contact-inner"><p class="eyebrow">LET'S BUILD SOMETHING / 04</p><h2>Good work starts<br>with a conversation.</h2><p>I'm interested in junior software development, graduate opportunities, and entry-level IT support roles where I can learn, contribute, and grow.</p><div class="contact-actions"><a class="button button-primary" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">Connect on GitHub <span>↗</span></a><a class="button button-quiet" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Find me on LinkedIn <span>↗</span></a></div><p class="contact-small">Add your preferred professional email and LinkedIn profile URL before publishing.</p></div></section>
   </main>
-  <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">LM</span><span>LERATO MBHELE<span class="brand-sub">SOFTWARE · SYSTEMS · SUPPORT</span></span></a><span>Designed with intention. Built to keep evolving.</span><a href="#home">BACK TO TOP ↑</a></footer>
-  <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <span>&copy; <span data-year>2026</span> Lerato Thando Mbhele</span>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <!-- CV PREVIEW -->
+  <dialog class="cv-dialog" id="cv-dialog" aria-labelledby="cv-title">
+    <div class="cv-bar">
+      <h2 id="cv-title">Lerato Mbhele, CV</h2>
+      <div class="cv-bar-actions">
+        <a class="btn btn-primary btn-small" href="assets/Lerato_Mbhele_CV.pdf" download>Download PDF</a>
+        <a class="btn btn-ghost btn-small" href="assets/Lerato_Mbhele_CV.pdf" target="_blank" rel="noreferrer">Open in new tab</a>
+        <button class="cv-close" type="button" data-close-cv aria-label="Close CV preview">Close</button>
+      </div>
+    </div>
+    <div class="cv-frame">
+      <iframe title="CV preview" data-src="assets/Lerato_Mbhele_CV.pdf#view=FitH"></iframe>
+      <p class="cv-fallback">Your browser can't show the PDF here. <a href="assets/Lerato_Mbhele_CV.pdf" download>Download the CV</a> instead.</p>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

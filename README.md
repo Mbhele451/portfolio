@@ -2,7 +2,7 @@
 
 My personal developer portfolio. It is a responsive static site built with plain HTML, CSS and JavaScript, with no framework or build step.
 
-**Live site:** <!-- add your GitHub Pages URL here once it is published -->
+- Live site: https://mbhele451.github.io/portfolio
 
 ## About me
 

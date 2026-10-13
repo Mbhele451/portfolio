@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e1a1c">
+
+  <title>StationaryHub | Lerato Mbhele</title>
+  <meta
+    name="description"
+    content="A C++ group project exploring inventory management, order processing and concurrent access to shared warehouse stock."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Lerato Mbhele, home">
+      <span class="brand-mark" aria-hidden="true">LM</span>
+      <span class="brand-name">Lerato Mbhele</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-controls="site-nav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="btn btn-small btn-primary" href="https://github.com/Mbhele451/StationaryHub-Inventory-System" target="_blank" rel="noopener noreferrer">
+        View repository ↗
+      </a>
+    </nav>
+  </header>
+
+  <main id="main" class="case-study">
+
+    <!-- PROJECT INTRODUCTION -->
+    <section class="case-hero">
+      <a class="back-link" href="index.html#work">← Back to selected work</a>
+
+      <div class="case-hero-copy">
+        <p class="eyebrow">C++ · Group project · COMP315</p>
+
+        <h1>StationaryHub<span class="title-period">.</span></h1>
+
+        <p class="case-lead">
+          Exploring how inventory and customer orders can be managed across
+          multiple warehouses — with particular attention to what happens
+          when several orders compete for the same stock.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn btn-primary"
+            href="https://github.com/Mbhele451/StationaryHub-Inventory-System"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore the code ↗
+          </a>
+          <a class="btn btn-ghost" href="#my-contribution">
+            My contribution ↓
+          </a>
+        </div>
+      </div>
+
+      <div class="case-summary" data-reveal>
+        <div class="summary-top">
+          <span class="summary-label">Project overview</span>
+          <span class="summary-index">01 / 04</span>
+        </div>
+
+        <dl class="summary-list">
+          <div>
+            <dt>Language</dt>
+            <dd>C++</dd>
+          </div>
+          <div>
+            <dt>Context</dt>
+            <dd>University group project</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Inventory, orders and concurrency</dd>
+          </div>
+          <div>
+            <dt>Core concepts</dt>
+            <dd>Classes, threads, mutexes</dd>
+          </div>
+        </dl>
+
+        <p class="summary-note">
+          The emphasis was on applying programming concepts to a shared-stock
+          problem, not on building a commercial inventory platform.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECT VISUAL -->
+    <section class="case-visual-section" aria-labelledby="visual-title">
+      <div class="case-visual-heading">
+        <p class="eyebrow">The system at a glance</p>
+        <h2 id="visual-title">One inventory. Multiple orders.</h2>
+        <p>
+          The central challenge is keeping stock consistent when orders
+          access the same warehouse inventory.
+        </p>
+      </div>
+
+      <figure class="system-visual" data-reveal>
+        <div class="system-node system-input">
+          <span class="system-node-number">01</span>
+          <strong>Customer orders</strong>
+          <span>Requests for products</span>
+        </div>
+
+        <div class="system-connector" aria-hidden="true">
+          <span>↓</span>
+        </div>
+
+        <div class="system-node system-process">
+          <span class="system-node-number">02</span>
+          <strong>Order processing</strong>
+          <span>Check requested quantities</span>
+        </div>
+
+        <div class="system-connector" aria-hidden="true">
+          <span>↓</span>
+        </div>
+
+        <div class="system-node system-stock">
+          <span class="system-node-number">03</span>
+          <strong>Warehouse inventory</strong>
+          <span>Shared stock must remain consistent</span>
+        </div>
+
+        <figcaption>
+          Conceptual overview of the intended processing flow. This is an
+          explanatory diagram, not a runtime screenshot.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- PROBLEM AND APPROACH -->
+    <section class="section case-section" id="approach">
+      <div class="case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">01 — The problem</p>
+          <h2>Stock is easy to track until orders overlap.</h2>
+        </div>
+
+        <div class="case-prose">
+          <p>
+            An inventory system needs to track available products and handle
+            requests for different quantities. The problem becomes more
+            interesting when multiple orders are processed concurrently.
+          </p>
+
+          <p>
+            If two threads inspect and update the same stock without suitable
+            coordination, they can interfere with one another. An order may
+            appear to have enough stock when another order has already
+            claimed it.
+          </p>
+
+          <h3>The goal</h3>
+          <p>
+            Apply object-oriented programming and concurrency concepts to
+            organise inventory, represent orders and protect shared stock
+            updates.
+          </p>
+
+          <div class="insight">
+            <span class="insight-mark" aria-hidden="true">↳</span>
+            <p>
+              <strong>The key question:</strong> how can the system prevent
+              conflicting stock updates while still allowing orders to be
+              processed by separate threads?
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section class="section case-section" id="architecture">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 — Design</p>
+          <h2>Separate responsibilities.</h2>
+        </div>
+        <p>
+          The class design separates products, orders and warehouse
+          operations so that each part has a clear responsibility.
+        </p>
+      </div>
+
+      <div class="architecture-grid">
+        <article class="architecture-item">
+          <span class="architecture-index">A</span>
+          <h3>Product</h3>
+          <p>
+            Represents an inventory item and the information required to
+            identify and manage it.
+          </p>
+        </article>
+
+        <article class="architecture-item">
+          <span class="architecture-index">B</span>
+          <h3>Order and OrderItem</h3>
+          <p>
+            Represent an order and the products with their requested
+            quantities.
+          </p>
+        </article>
+
+        <article class="architecture-item">
+          <span class="architecture-index">C</span>
+          <h3>Warehouse</h3>
+          <p>
+            Represents a warehouse and the stock associated with it.
+          </p>
+        </article>
+
+        <article class="architecture-item">
+          <span class="architecture-index">D</span>
+          <h3>Inventory management</h3>
+          <p>
+            Coordinates inventory operations, including product lookup and
+            order-related stock changes.
+          </p>
+        </article>
+      </div>
+
+      <p class="case-caveat">
+        These descriptions summarise the design discussed for the project.
+        Check the final repository before treating every class or
+        responsibility as implemented exactly as described.
+      </p>
+    </section>
+
+    <!-- CONTRIBUTION -->
+    <section class="section case-section" id="my-contribution">
+      <div class="case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">03 — My contribution</p>
+          <h2>Understanding the details behind the code.</h2>
+        </div>
+
+        <div class="case-prose">
+          <p>
+            This was a group project. My portfolio focuses on the parts I
+            worked on, rather than presenting the whole system as an
+            individual build.
+          </p>
+
+          <div class="contribution-item">
+            <span class="contribution-number">01</span>
+            <div>
+              <h3>Concurrent inventory updates</h3>
+              <p>
+                Worked on mutex-based synchronisation intended to protect
+                shared inventory updates when orders are processed by
+                different threads.
+              </p>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <span class="contribution-number">02</span>
+            <div>
+              <h3>Command-line interaction</h3>
+              <p>
+                Worked on the menu and handler functions used to interact
+                with the system through the console.
+              </p>
+            </div>
+          </div>
+
+          <div class="contribution-item">
+            <span class="contribution-number">03</span>
+            <div>
+              <h3>Shared object management</h3>
+              <p>
+                I worked with `std::shared_ptr` to manage shared ownership of objects across the system,
+                helping ensure that objects remain available while they are still being used. 
+                This reinforced my understanding of resource management and object lifetime in C++.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE / SCREENSHOTS -->
+    <section class="section case-section" id="evidence">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">04 — Evidence</p>
+          <h2>Show the work, not just the description.</h2>
+        </div>
+        <p>
+          Replace these placeholders with genuine screenshots from your
+          final code and test runs.
+        </p>
+      </div>
+
+      <div class="evidence-grid">
+        <figure class="evidence-item evidence-large">
+          <div class="evidence-image">
+            <img
+              src="assets/projects/stationaryhub/inventory-demo.png"
+              alt="Placeholder for a screenshot of the StationaryHub inventory console"
+              loading="lazy"
+            >
+          </div>
+          <figcaption>
+            <span class="evidence-label">01 / Interface</span>
+            <strong>Inventory in the console</strong>
+            <span>Show a real run of the menu and an inventory operation.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="evidence-item">
+          <div class="evidence-image">
+            <img
+              src="assets/projects/stationaryhub/concurrent-orders.png"
+              alt="Placeholder for a real StationaryHub concurrent order test"
+              loading="lazy"
+            >
+          </div>
+          <figcaption>
+            <span class="evidence-label">02 / Testing</span>
+            <strong>Order processing</strong>
+            <span>Show actual output demonstrating how stock is handled.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="evidence-item">
+          <div class="evidence-image">
+            <img
+              src="assets/projects/stationaryhub/class-design.png"
+              alt="Placeholder for the StationaryHub class diagram"
+              loading="lazy"
+            >
+          </div>
+          <figcaption>
+            <span class="evidence-label">03 / Structure</span>
+            <strong>Class design</strong>
+            <span>Use the group's actual UML or a diagram matching the code.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- LESSONS -->
+    <section class="section case-section">
+      <div class="case-two-column">
+        <div class="case-sticky-heading">
+          <p class="eyebrow">Reflection</p>
+          <h2>What this project taught me.</h2>
+        </div>
+
+        <div class="case-prose">
+          <p>
+            Concurrent programming requires more than starting multiple
+            threads. Shared data needs clear ownership rules, and operations
+            that modify that data need to be coordinated.
+          </p>
+
+          <p>
+            The project also reinforced the value of separating
+            responsibilities across classes. A clearer design makes it
+            easier to reason about what an operation should do and where
+            its behaviour belongs.
+          </p>
+
+          <p>
+            My next step is to validate the behaviour with repeatable tests,
+            especially cases where multiple orders request the last
+            available units of a product.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSE -->
+    <section class="case-outro">
+      <p class="eyebrow">Explore the project</p>
+      <h2>Want to see how it's put together?</h2>
+      <p>
+        Explore the source code for the implementation, class structure
+        and available examples.
+      </p>
+
+      <div class="hero-actions">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/Mbhele451/StationaryHub-Inventory-System"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View GitHub repository ↗
+        </a>
+        <a class="btn btn-ghost" href="index.html#work">
+          Back to all projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span data-year></span> Lerato Mbhele</p>
+    <a href="index.html">Portfolio home ↑</a>
+  </footer>
+</body>
+</html>

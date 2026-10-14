@@ -252,12 +252,6 @@
           </p>
         </article>
       </div>
-
-      <p class="case-caveat">
-        These descriptions summarise the design discussed for the project.
-        Check the final repository before treating every class or
-        responsibility as implemented exactly as described.
-      </p>
     </section>
 
     <!-- CONTRIBUTION -->
@@ -303,9 +297,11 @@
             <div>
               <h3>Shared object management</h3>
               <p>
-                I worked with `std::shared_ptr` to manage shared ownership of objects across the system,
-                helping ensure that objects remain available while they are still being used. 
-                This reinforced my understanding of resource management and object lifetime in C++.
+                Worked with <code>std::shared_ptr</code> to manage shared
+                ownership of objects across the system, so that objects
+                stay available while they are still in use. This
+                reinforced my understanding of resource management and
+                object lifetime in C++.
               </p>
             </div>
           </div>
@@ -318,57 +314,83 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">04 — Evidence</p>
-          <h2>Show the work, not just the description.</h2>
+          <h2>The system, running.</h2>
         </div>
         <p>
-          Replace these placeholders with genuine screenshots from your
-          final code and test runs.
+          Console output from the application, and the class design
+          behind it.
         </p>
       </div>
 
       <div class="evidence-grid">
-        <figure class="evidence-item evidence-large">
-          <div class="evidence-image">
+        <figure class="evidence-item evidence-menu" data-reveal>
+          <div class="evidence-image evidence-terminal">
             <img
-              src="assets/projects/stationaryhub/inventory-demo.png"
-              alt="Placeholder for a screenshot of the StationaryHub inventory console"
+              src="assets/inventory-demo.png"
+              width="441"
+              height="394"
+              alt="StationaryHub console menu listing warehouse operations, product operations, multi-threaded order processing and exit"
               loading="lazy"
             >
           </div>
           <figcaption>
             <span class="evidence-label">01 / Interface</span>
             <strong>Inventory in the console</strong>
-            <span>Show a real run of the menu and an inventory operation.</span>
+            <span class="evidence-desc">
+              The menu covers warehouses, products and sorting, with a
+              multi-threaded option for processing orders.
+            </span>
           </figcaption>
         </figure>
 
-        <figure class="evidence-item">
-          <div class="evidence-image">
+        <figure class="evidence-item evidence-orders" data-reveal>
+          <div class="evidence-image evidence-terminal">
             <img
-              src="assets/projects/stationaryhub/concurrent-orders.png"
-              alt="Placeholder for a real StationaryHub concurrent order test"
+              src="assets/concurrent-orders.png"
+              width="706"
+              height="861"
+              alt="Console output of orders read from data/orders.txt, each handled on its own thread and logged as success or failure"
               loading="lazy"
             >
           </div>
           <figcaption>
             <span class="evidence-label">02 / Testing</span>
             <strong>Order processing</strong>
-            <span>Show actual output demonstrating how stock is handled.</span>
+            <span class="evidence-desc">
+              Orders from <code>data/orders.txt</code> are processed on
+              separate threads. Each line shows the thread ID and target
+              warehouse, and an order that cannot be filled is reported as
+              failed for insufficient stock.
+            </span>
           </figcaption>
         </figure>
 
-        <figure class="evidence-item">
-          <div class="evidence-image">
-            <img
-              src="assets/projects/stationaryhub/class-design.png"
-              alt="Placeholder for the StationaryHub class diagram"
-              loading="lazy"
+        <figure class="evidence-item evidence-diagram" data-reveal>
+          <div class="evidence-image evidence-diagram-frame">
+            <a
+              href="assets/class-design.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the StationaryHub class diagram at full size in a new tab"
             >
+              <img
+                src="assets/class-design.png"
+                width="3035"
+                height="1104"
+                alt="Class diagram grouping StationaryHub into CLI, manager, order processing, warehouse, persistence, concurrency and domain layers"
+                loading="lazy"
+              >
+            </a>
           </div>
           <figcaption>
             <span class="evidence-label">03 / Structure</span>
             <strong>Class design</strong>
-            <span>Use the group's actual UML or a diagram matching the code.</span>
+            <span class="evidence-desc">
+              The design grouped by layer: console, inventory manager,
+              order processing, warehouse, and a domain layer with an
+              abstract <code>Product</code> and its variants. Select the
+              diagram to open it full&nbsp;size&nbsp;↗
+            </span>
           </figcaption>
         </figure>
       </div>
@@ -397,9 +419,11 @@
           </p>
 
           <p>
-            My next step is to validate the behaviour with repeatable tests,
-            especially cases where multiple orders request the last
-            available units of a product.
+            Working on these parts helped me connect the system's design to its implementation. 
+            I gained a better understanding of how mutexes coordinate access to shared inventory, 
+            how the menu and handler functions connect user input to inventory operations, 
+            and how `std::shared_ptr` helps manage object lifetimes. 
+            Together, these tasks gave me practical experience with concurrency, object-oriented design, and resource management in C++.
           </p>
         </div>
       </div>

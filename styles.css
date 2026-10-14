@@ -674,12 +674,17 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
 
 .back-link:hover { color: var(--lichen); }
 
-.case-hero-copy { grid-column: 1; }
+.case-hero-copy {
+  grid-column: 1;
+  container-type: inline-size; /* lets the title size itself to this column */
+}
 
 .case-hero-copy .eyebrow { margin-bottom: 1.2rem; }
 
 .case-hero h1 {
-  font: 800 clamp(3.5rem, 9vw, 7.5rem)/0.9 var(--display);
+  font: 800 clamp(2.75rem, 6.4vw, 5.75rem)/0.9 var(--display);
+  /* "StationaryHub." is about 6em wide, so size it from its column to keep the word whole */
+  font-size: clamp(2.5rem, 15.5cqi, 7.5rem);
   letter-spacing: -0.065em;
   overflow-wrap: anywhere;
 }
@@ -912,12 +917,6 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
   font-size: 0.95rem;
 }
 
-.case-caveat {
-  margin-top: 1.25rem;
-  color: var(--reed);
-  font-size: 0.85rem;
-}
-
 .contribution-item {
   display: grid;
   grid-template-columns: 2.5rem minmax(0, 1fr);
@@ -947,31 +946,54 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
 
 .evidence-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2.5rem, 5vw, 3.5rem) clamp(1.25rem, 3vw, 2.5rem);
   align-items: start;
 }
 
 .evidence-item { min-width: 0; }
 
-.evidence-large { grid-column: 1 / -1; }
+.evidence-diagram { grid-column: 1 / -1; }
 
+/* Frames hug the image: no forced aspect ratio, no cropping, no upscaling */
 .evidence-image {
-  display: grid;
-  place-items: center;
-  min-height: 12rem;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 1rem;
-  background:
-    radial-gradient(80% 80% at 20% 0%, var(--kelp-hi), var(--kelp));
+  background: var(--kelp);
 }
 
 .evidence-image img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Matches the terminal's own background so a narrow capture sits flush in a wide frame */
+.evidence-terminal { background: #191a1b; }
+
+/* The class diagram is very wide: fill the column, scroll sideways on small screens */
+.evidence-diagram-frame {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  background: #fff;
+  transition: border-color 0.4s var(--ease);
+}
+
+.evidence-diagram-frame:hover,
+.evidence-diagram-frame:focus-within { border-color: var(--lichen); }
+
+.evidence-diagram-frame a {
+  display: block;
+  cursor: zoom-in;
+  border-radius: inherit;
+}
+
+.evidence-diagram-frame img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  min-width: 62rem;
+  max-width: none;
 }
 
 .evidence-item figcaption {
@@ -992,7 +1014,8 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
   font: 600 1.1rem/1.4 var(--display);
 }
 
-.evidence-item figcaption > span:last-child {
+.evidence-desc {
+  max-width: 44rem;
   color: var(--reed);
   font-size: 0.9rem;
 }
@@ -1034,8 +1057,6 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
   .case-hero-copy,
   .case-summary { grid-column: 1; }
 
-  .case-hero h1 { font-size: clamp(3.4rem, 16vw, 6rem); }
-
   .case-two-column { grid-template-columns: 1fr; }
 
   .architecture-grid { grid-template-columns: 1fr; }
@@ -1044,5 +1065,11 @@ code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size:
 
   .evidence-grid { grid-template-columns: 1fr; }
 
-  .evidence-large { grid-column: auto; }
+  /* Long console lines stay legible: scroll sideways instead of shrinking */
+  .evidence-orders .evidence-image {
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  .evidence-orders .evidence-image img { min-width: 34rem; }
 }

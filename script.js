@@ -5,7 +5,7 @@
 (() => {
   "use strict";
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   /* ---------- Header: add a glass background once the page scrolls ---------- */
   const header = document.querySelector(".site-header");
@@ -54,34 +54,33 @@
     sections.forEach((s) => spy.observe(s));
   }
 
-  /* ---------- Gentle reveal for project visuals ---------- */
-  const revealEls = document.querySelectorAll("[data-reveal]");
-  if ("IntersectionObserver" in window && !prefersReducedMotion) {
+  /* Animate each marked section once. Content stays readable without JS. */
+  if ("IntersectionObserver" in window) {
     const reveal = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
+        if (!reducedMotion.matches) entry.target.classList.add("scroll-enter");
       });
-    }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
-    revealEls.forEach((el) => reveal.observe(el));
-  } else {
-    revealEls.forEach((el) => el.classList.add("is-visible"));
+    }, { threshold: 0 });
+    document.querySelectorAll("[data-reveal]").forEach(el => reveal.observe(el));
   }
 
   /* ---------- Slow parallax on the portrait (desktop, motion allowed) ---------- */
   const portrait = document.querySelector(".portrait");
   const wide = window.matchMedia("(min-width: 62.01rem)");
-  if (portrait && !prefersReducedMotion) {
+  if (portrait) {
     let ticking = false;
     const move = () => {
-      const y = wide.matches ? Math.min(window.scrollY, 800) * -0.06 : 0;
-      portrait.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
+      const y = wide.matches && !reducedMotion.matches ? Math.min(window.scrollY, 800) * -0.06 : 0;
+      portrait.style.transform = y ? `translate3d(0, ${y.toFixed(1)}px, 0)` : "";
       ticking = false;
     };
     window.addEventListener("scroll", () => {
-      if (!ticking) { ticking = true; requestAnimationFrame(move); }
+      if (!reducedMotion.matches && !ticking) { ticking = true; requestAnimationFrame(move); }
     }, { passive: true });
+    reducedMotion.addEventListener("change", move);
+    wide.addEventListener("change", move);
   }
 
   /* ---------- CV preview dialog ---------- */

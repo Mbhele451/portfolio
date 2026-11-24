@@ -70,7 +70,7 @@
 
     <!-- WORK -->
     <section class="section work" id="work" aria-labelledby="work-title">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <h2 id="work-title">Projects</h2>
         <p>Three finished projects from my degree and personal work, and one I'm building now. Group projects say what I did myself.</p>
       </header>
@@ -81,22 +81,21 @@
           <div class="plate plate-thywill" data-reveal>
             <img
               src="assets/ThyWill.png"
-              width=fit
-              height=fit
-              alt="ThyWill Logo"
+              width="1024"
+              height="637"
+              alt="THY WILL Electrical and Construction"
               loading="lazy"
             >
           </div>
-          <div class="project-body">
+          <div class="project-body" data-reveal>
             <p class="project-kind">Final-year group project, two semesters</p>
-            <h3>Thywill Electrical Services: job and inventory management</h3>
-            <p>A system for an electrical and construction business to manage customers, jobs, technicians and stock. It started as a Windows Forms desktop app and was extended into an ASP.NET Web Forms version with a layered architecture.</p>
-            <p class="contribution"><strong>What I did:</strong> worked on the desktop app's service and data-access layers, CRUD and validation for customers, jobs, staff and inventory, job workflows (technician assignment, status, stock needs), and cost calculations and PDF invoices.</p>
-            <p class="note">The database ran on a university-controlled SQL Server, so anything that depends on it is limited by that environment.</p>
+            <h3>THY WILL job and inventory management</h3>
+            <p>Our Windows desktop app and web portal connect an electrical contractor’s bookings, field work, stock and customer invoices. The case study follows a saved EV charger quote and a separately approved booking-change fee.</p>
+            <p class="contribution"><strong>My work</strong> covered the manager workspace, financial and stock transactions, system security, shared application architecture and validation across the booking lifecycle.</p>
             <ul class="tags" aria-label="Technologies">
               <li>C#</li><li>.NET Framework</li><li>Windows Forms</li><li>ASP.NET Web Forms</li><li>SQL Server</li>
             </ul>
-            <a class="link" href="ThyWill.html">Read the case study → </a>
+            <a class="link" href="ThyWill.html">Read the THY WILL case study</a>
           </div>
         </article>
 
@@ -115,7 +114,7 @@
               </g>
             </svg>
           </div>
-          <div class="project-body">
+          <div class="project-body" data-reveal>
             <p class="project-kind">Personal project</p>
             <h3>Student performance prediction</h3>
             <p>A Python project that estimates student marks from study hours, attendance and sleep. Scripts generate 500 synthetic records, train a Random Forest model, make predictions and plot the results.</p>
@@ -123,7 +122,7 @@
             <ul class="tags" aria-label="Technologies">
               <li>Python</li><li>Scikit-learn</li><li>Pandas</li><li>Matplotlib</li>
             </ul>
-            <a class="link" href="https://github.com/Mbhele451/student-performance-prediction" target="_blank" rel="noreferrer">View the repository</a>
+            <a class="link" href="https://github.com/Mbhele451/student-performance-prediction" target="_blank" rel="noreferrer"><svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 .297a12 12 0 0 0-3.794 23.386c.6.111.82-.261.82-.578v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.604-2.665-.303-5.467-1.332-5.467-5.931 0-1.31.469-2.382 1.236-3.222-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.51 11.51 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.814 1.103.814 2.222v3.286c0 .319.216.694.825.576A12.003 12.003 0 0 0 12 .297z"/></svg>View the repository</a>
           </div>
         </article>
 
@@ -142,7 +141,7 @@
               <text x="160" y="105" text-anchor="middle" fill="currentColor" font-family="Hanken Grotesk, sans-serif" font-size="12">Orders</text>
             </svg>
           </div>
-          <div class="project-body">
+          <div class="project-body" data-reveal>
             <p class="project-kind">Group project, COMP315</p>
             <h3>Concurrent inventory and trading system</h3>
             <p>A C++ console application that processes 20 orders across 9 warehouses at the same time. Mutexes protect shared stock so orders are rejected cleanly when inventory runs out.</p>
@@ -163,12 +162,12 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View GitHub ↗
+                <svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 .297a12 12 0 0 0-3.794 23.386c.6.111.82-.261.82-.578v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.604-2.665-.303-5.467-1.332-5.467-5.931 0-1.31.469-2.382 1.236-3.222-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.51 11.51 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.814 1.103.814 2.222v3.286c0 .319.216.694.825.576A12.003 12.003 0 0 0 12 .297z"/></svg>View GitHub ↗
               </a>
             </div>
         </article>
 
-        <article class="project p-next">
+        <article class="project p-next" data-reveal>
           <p class="project-kind">In progress</p>
           <h3>Helpdesk management system</h3>
           <p>A personal project to practise building a full-stack product end to end: tickets, user accounts and deployment. I'm building it in small milestones.</p>
@@ -182,13 +181,13 @@
 
     <!-- ABOUT -->
     <section class="section about" id="about" aria-labelledby="about-title">
-      <div class="about-copy">
+      <div class="about-copy" data-reveal>
         <h2 id="about-title">I like understanding how a system works before I change it.</h2>
         <p>My degree has taken me through data structures, databases, operating systems, web development and systems analysis. I enjoy breaking a messy requirement into small steps and turning it into something people can use.</p>
         <p>I'm also drawn to the reliability side of software: troubleshooting, clear documentation and designs that are easy to maintain. I'm interested in cloud infrastructure and systems-level engineering, and I'm looking for a team where I can learn that properly.</p>
       </div>
 
-      <aside class="about-facts" aria-label="Education and experience">
+      <aside class="about-facts" aria-label="Education and experience" data-reveal>
         <div class="fact">
           <h3>Demonstrator, COMP 100</h3>
           <p>Supporting first-year students in Introduction to Programming at UKZN.</p>
@@ -206,37 +205,37 @@
 
     <!-- SKILLS -->
     <section class="section skills" id="skills" aria-labelledby="skills-title">
-      <header class="section-head">
+      <header class="section-head" data-reveal>
         <h2 id="skills-title">Toolkit</h2>
         <p>What I have used in coursework and projects, and what I'm learning next.</p>
       </header>
 
       <dl class="skill-list">
-        <div class="skill-row"><dt>Languages</dt><dd><ul><li>Python</li><li>Java</li><li>C#</li><li>C++</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
-        <div class="skill-row"><dt>Web and databases</dt><dd><ul><li>HTML</li><li>CSS</li><li>ASP.NET Web Forms</li><li>SQL Server</li><li>MySQL</li><li>Database design</li></ul></dd></div>
-        <div class="skill-row"><dt>Machine learning</dt><dd><ul><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Model training and evaluation</li></ul></dd></div>
-        <div class="skill-row"><dt>Systems</dt><dd><ul><li>Concurrency and multithreading</li><li>Memory management</li><li>Linux (Ubuntu, Zorin OS)</li><li>Windows</li></ul></dd></div>
-        <div class="skill-row"><dt>Tools</dt><dd><ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul></dd></div>
-        <div class="skill-row skill-row-learning"><dt>Learning now</dt><dd><ul><li>React</li><li>PostgreSQL</li><li>Docker</li><li>Cloud infrastructure</li></ul></dd></div>
+        <div class="skill-row" data-reveal><dt>Languages</dt><dd><ul><li>Python</li><li>Java</li><li>C#</li><li>C++</li><li>SQL</li><li>JavaScript</li></ul></dd></div>
+        <div class="skill-row" data-reveal><dt>Web and databases</dt><dd><ul><li>HTML</li><li>CSS</li><li>ASP.NET Web Forms</li><li>SQL Server</li><li>MySQL</li><li>Database design</li></ul></dd></div>
+        <div class="skill-row" data-reveal><dt>Machine learning</dt><dd><ul><li>Scikit-learn</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li>Model training and evaluation</li></ul></dd></div>
+        <div class="skill-row" data-reveal><dt>Systems</dt><dd><ul><li>Concurrency and multithreading</li><li>Memory management</li><li>Linux (Ubuntu, Zorin OS)</li><li>Windows</li></ul></dd></div>
+        <div class="skill-row" data-reveal><dt>Tools</dt><dd><ul><li>Git</li><li>GitHub</li><li>VS Code</li><li>Visual Studio</li></ul></dd></div>
+        <div class="skill-row skill-row-learning" data-reveal><dt>Learning now</dt><dd><ul><li>React</li><li>PostgreSQL</li><li>Docker</li><li>Cloud infrastructure</li></ul></dd></div>
       </dl>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="contact-inner">
+      <div class="contact-inner" data-reveal>
         <h2 id="contact-title">Have a role or project in mind?</h2>
         <p>I'm available from December 2026 and happy to talk sooner about graduate programmes and junior roles. Email is the quickest way to reach me.</p>
         <a class="contact-email" href="mailto:mazwimbhele45@gmail.com">mazwimbhele45@gmail.com</a>
         <div class="contact-actions">
           <button class="btn btn-primary" type="button" data-open-cv>View CV</button>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/lerato-mbhele-144969238" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/lerato-mbhele-144969238" target="_blank" rel="noreferrer"><svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20.45 20.45H16.9v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.36-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/Mbhele451" target="_blank" rel="noreferrer"><svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 .297a12 12 0 0 0-3.794 23.386c.6.111.82-.261.82-.578v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.604-2.665-.303-5.467-1.332-5.467-5.931 0-1.31.469-2.382 1.236-3.222-.124-.303-.536-1.524.117-3.176 0 0 1.008-.323 3.301 1.23a11.51 11.51 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.655 1.652.243 2.873.119 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.479 5.922.43.372.814 1.103.814 2.222v3.286c0 .319.216.694.825.576A12.003 12.003 0 0 0 12 .297z"/></svg>GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-reveal>
     <span>&copy; <span data-year>2026</span> Lerato Thando Mbhele</span>
     <a href="#main">Back to top</a>
   </footer>
@@ -246,14 +245,14 @@
     <div class="cv-bar">
       <h2 id="cv-title">Lerato Mbhele, CV</h2>
       <div class="cv-bar-actions">
-        <a class="btn btn-primary btn-small" href="assets/Lerato_Mbhele_CV.pdf" download>Download PDF</a>
+        <a class="btn btn-primary btn-small" href="assets/Lerato_Mbhele_CV.pdf" download><svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM4 17h2v3h12v-3h2v5H4z"/></svg>Download PDF</a>
         <a class="btn btn-ghost btn-small" href="assets/Lerato_Mbhele_CV.pdf" target="_blank" rel="noreferrer">Open in new tab</a>
         <button class="cv-close" type="button" data-close-cv aria-label="Close CV preview">Close</button>
       </div>
     </div>
     <div class="cv-frame">
       <iframe title="CV preview" data-src="assets/Lerato_Mbhele_CV.pdf#view=FitH"></iframe>
-      <p class="cv-fallback">Your browser can't show the PDF here. <a href="assets/Lerato_Mbhele_CV.pdf" download>Download the CV</a> instead.</p>
+      <p class="cv-fallback">Your browser can't show the PDF here. <a href="assets/Lerato_Mbhele_CV.pdf" download><svg class="link-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17V3zM4 17h2v3h12v-3h2v5H4z"/></svg>Download the CV</a> instead.</p>
     </div>
   </dialog>
 

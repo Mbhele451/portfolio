@@ -24,7 +24,7 @@ I'm a final-year BSc Computer Science and Information Systems student at the Uni
 
 | Project | Type | Stack | Repository |
 | --- | --- | --- | --- |
-| THY WILL Service Management | University group project | Windows Forms, ASP.NET Web Forms, C#, SQL Server | [Illustrated case study](ThyWill.html) |
+| THY WILL Service Management | University group project | Windows Forms, ASP.NET Web Forms, C#, SQL Server | [Source code](https://github.com/Mbhele451/thy-will-job-management) · [Illustrated case study](ThyWill.html) |
 | Student Performance Prediction | Independent project | Python, Scikit-learn, Pandas, Matplotlib | [student-performance-prediction](https://github.com/Mbhele451/student-performance-prediction) |
 | Concurrent Inventory & Trading System | University group project | C++ concurrency (`std::thread`, `std::mutex`, smart pointers) | [StationaryHub-Inventory-System](https://github.com/Mbhele451/StationaryHub-Inventory-System) |
 | Helpdesk Management System | Personal project, in progress | Java, React, PostgreSQL, JWT, Docker Compose (planned) | Not published yet |
